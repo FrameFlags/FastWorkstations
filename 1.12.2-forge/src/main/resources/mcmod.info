@@ -1,0 +1,14 @@
+[{
+  "modid": "itamiofastws",
+  "name": "Fast Workstations — Itamio Port",
+  "description": "Furnaces and hoppers process one item per tick by default; the tick rate is configurable. 1.12.2 has no blast furnaces or smokers.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/Sekai0NI0itamio/fast-workstations",
+  "updateUrl": "",
+  "authorList": ["Sekai0NI0itamio"],
+  "credits": "Based on fast-workstations by rezzt-modz (MIT). Requires MixinBooter.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": ["mixinbooter@[8.6,)"]
+}]
