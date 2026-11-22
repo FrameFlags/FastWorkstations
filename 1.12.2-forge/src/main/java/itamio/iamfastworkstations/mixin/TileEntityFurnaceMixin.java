@@ -3,7 +3,6 @@ package itamio.iamfastworkstations.mixin;
 import itamio.iamfastworkstations.Config;
 import net.minecraft.tileentity.TileEntityFurnace;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -20,9 +19,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(TileEntityFurnace.class)
 public abstract class TileEntityFurnaceMixin {
 
-    @Shadow(remap = true) private int cookTime;
-    @Shadow(remap = true) private int totalCookTime;
-
     @ModifyConstant(method = "getCookTime", constant = @Constant(intValue = 200), require = 1)
     private int fastWorkstations$replaceDefaultCookTime(int original) {
         return Config.workstationTicks();
@@ -31,9 +27,10 @@ public abstract class TileEntityFurnaceMixin {
     @Inject(method = "update", at = @At("HEAD"))
     private void fastWorkstations$forceCookTime(CallbackInfo ci) {
         int ticks = Config.workstationTicks();
-        this.totalCookTime = ticks;
-        if (this.cookTime >= this.totalCookTime) {
-            this.cookTime = this.totalCookTime - 1;
+        TileEntityFurnace furnace = (TileEntityFurnace) (Object) this;
+        furnace.setField(3, ticks);
+        if (furnace.getField(2) >= ticks) {
+            furnace.setField(2, ticks - 1);
         }
     }
 }

@@ -1,26 +1,20 @@
 {
   "mappings": {
     "itamio/iamfastworkstations/mixin/TileEntityFurnaceMixin": {
-      "cookTime": "field_174906_k",
-      "totalCookTime": "field_174905_l",
       "getCookTime": "Lnet/minecraft/tileentity/TileEntityFurnace;func_174904_a(Lnet/minecraft/item/ItemStack;)I",
       "update": "Lnet/minecraft/tileentity/TileEntityFurnace;func_73660_a()V"
     },
     "itamio/iamfastworkstations/mixin/TileEntityHopperMixin": {
-      "transferCooldown": "field_145901_j",
       "setTransferCooldown": "Lnet/minecraft/tileentity/TileEntityHopper;func_145896_c(I)V"
     }
   },
   "data": {
     "searge": {
       "itamio/iamfastworkstations/mixin/TileEntityFurnaceMixin": {
-        "cookTime": "field_174906_k",
-        "totalCookTime": "field_174905_l",
         "getCookTime": "Lnet/minecraft/tileentity/TileEntityFurnace;func_174904_a(Lnet/minecraft/item/ItemStack;)I",
         "update": "Lnet/minecraft/tileentity/TileEntityFurnace;func_73660_a()V"
       },
       "itamio/iamfastworkstations/mixin/TileEntityHopperMixin": {
-        "transferCooldown": "field_145901_j",
         "setTransferCooldown": "Lnet/minecraft/tileentity/TileEntityHopper;func_145896_c(I)V"
       }
     }
