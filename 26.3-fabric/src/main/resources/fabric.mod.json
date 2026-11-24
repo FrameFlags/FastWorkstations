@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "itamiofastws",
+  "version": "${version}",
+  "name": "Fast Workstations — Itamio Port",
+  "description": "Furnaces, blast furnaces, smokers and hoppers process one item per tick by default; the tick rate is configurable.",
+  "authors": [
+    "Sekai0NI0itamio"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Sekai0NI0itamio/fast-workstations",
+    "sources": "https://github.com/FrameFlags/FastWorkstations",
+    "issues": "https://github.com/FrameFlags/FastWorkstations/issues"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "itamio.iamfastworkstations.FastWorkstationsMod"
+    ]
+  },
+  "mixins": [
+    "itamiofastws.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.20.1",
+    "minecraft": "~26.3",
+    "java": ">=25"
+  }
+}
