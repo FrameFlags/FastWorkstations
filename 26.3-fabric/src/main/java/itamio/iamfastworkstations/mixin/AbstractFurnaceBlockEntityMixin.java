@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class AbstractFurnaceBlockEntityMixin {
 
     @Shadow NonNullList<ItemStack> items;
-    @Shadow int litTime;
+    @Shadow private int litTimeRemaining;
     @Shadow int cookingTotalTime;
 
     @Shadow protected abstract int getBurnDuration(ServerLevel level, ItemStack stack);
@@ -33,7 +33,7 @@ public abstract class AbstractFurnaceBlockEntityMixin {
         AbstractFurnaceBlockEntityMixin self = (AbstractFurnaceBlockEntityMixin) (Object) furnace;
         ItemStack input = self.items.get(0);
         ItemStack fuel = self.items.get(1);
-        if (input.isEmpty() || (self.litTime <= 0 && self.getBurnDuration(level, fuel) <= 0)) {
+        if (input.isEmpty() || (self.litTimeRemaining <= 0 && self.getBurnDuration(level, fuel) <= 0)) {
             return;
         }
         self.cookingTotalTime = Config.workstationTicks();
